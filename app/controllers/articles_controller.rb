@@ -17,9 +17,8 @@ before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def create
     @article = Article.new(article_params)
-
     if @article.save
-      redirect_to articles_path, notice: 'Article was successfully created.'
+      redirect_to @article, notice: 'Article was successfully created.'
     else
       render :new
     end
